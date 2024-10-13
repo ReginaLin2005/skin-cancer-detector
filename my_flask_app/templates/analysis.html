@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skin Analysis - SkinScan</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Skin Analysis - Spot™</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +14,12 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html"><img src="Assets/logo.svg" alt="logo"></a>
+                <a href="/"><img src="{{ url_for('static', filename='asset/logo.svg') }}" alt="logo"></a>
             </div>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="prediction.html">Prediction</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="prediction">Prediction</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -78,7 +78,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 SkinScan. All rights reserved.</p>
+        <p>&copy; 2024 Spot™. All rights reserved.</p>
         <p>Disclaimer: This tool is for informational purposes only and should not be considered medical advice. Always consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
     </footer>
 

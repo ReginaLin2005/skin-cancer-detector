@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - SkinScan</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact - Spot™</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +14,12 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html"><img src="Assets/logo.svg" alt="logo"></a>
+                <a href="/"><img src="{{ url_for('static', filename='asset/logo.svg') }}" alt="logo"></a>
             </div>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="prediction.html">Prediction</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="prediction">Prediction</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +31,7 @@
                 <div class="contact-info">
                     <h2>Get in Touch</h2>
                     <p>For more information or support, please reach out to us:</p>
-                    <p>Email: info@skinscan.com</p>
+                    <p>Email: info@spot.com</p>
                     <p>Phone: (555) 123-4567</p>
                     <p>Address: 123 AI Street, Tech City, TC 12345</p>
                     <div class="social-icons">
@@ -56,8 +56,8 @@
             <h2>Frequently Asked Questions</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Is SkinScan a replacement for seeing a doctor?</h3>
-                    <p>No, SkinScan is not a replacement for professional medical advice. It's a tool to help you identify potential issues that may require further examination by a dermatologist.</p>
+                    <h3>Is Spot™ a replacement for seeing a doctor?</h3>
+                    <p>No, Spot™ is not a replacement for professional medical advice. It's a tool to help you identify potential issues that may require further examination by a dermatologist.</p>
                 </div>
                 <div class="card">
                     <h3>How accurate is the AI prediction?</h3>
@@ -72,7 +72,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 SkinScan. All rights reserved.</p>
+        <p>&copy; 2024 Spot™. All rights reserved.</p>
         <p>Disclaimer: This tool is for informational purposes only and should not be considered medical advice. Always consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
     </footer>
 </body>
