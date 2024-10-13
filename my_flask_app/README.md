@@ -34,10 +34,6 @@ This application is not a substitute for professional medical advice, diagnosis,
 
 [Instructions for setting up and running the project locally]
 
-## Contributing
-
-We welcome contributions to improve the accuracy of our model and enhance the user experience. Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
 ## License
 
 [Include license information here]
