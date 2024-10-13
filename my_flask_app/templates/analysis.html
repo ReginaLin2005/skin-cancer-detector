@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Analysis - Spot™</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="analysis-page">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='asset/logo.svg') }}" alt="logo"></a>
+            </div>
+            <ul>
+                <li><a href="about">About</a></li>
+                <li><a href="prediction">Prediction</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="analysis" class="container text-center">
+            <h1 class="page-title">Skin Analysis Process</h1>
+            
+            <!-- Step 1: Instructions -->
+            <div id="step-instructions" class="step card">
+                <h3 class="step-title">How to Take a Good Photo</h3>
+                <ul class="instruction-list">
+                    <li>Use good lighting (natural light is best)</li>
+                    <li>Keep the camera steady and in focus</li>
+                    <li>Include a ruler or coin for size reference</li>
+                    <li>Take multiple angles if possible</li>
+                </ul>
+                <img src="sample-photo.jpg" alt="Sample skin lesion photo" class="sample-photo">
+                <div class="button-container">
+                    <button id="nextButton" class="cta-button">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Upload -->
+            <div id="step-upload" class="step card" style="display: none;">
+                <h3 class="step-title">Upload Your Photo</h3>
+                <p>Choose how you want to provide your skin lesion image:</p>
+                <div class="input-mode-selector">
+                    <label class="radio-container">
+                        <input type="radio" name="inputMode" id="fileInputRadio" checked>
+                        <span class="checkmark"></span>
+                        File Input
+                    </label>
+                    <span class="spacer"></span>
+                    <label class="radio-container">
+                        <input type="radio" name="inputMode" id="imageInputRadio">
+                        <span class="checkmark"></span>
+                        Webcam Capture
+                    </label>
+                </div>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div id="manualUpload">
+                        <p>Upload a JPG image of your skin lesion for analysis:</p>
+                        <div class="file-upload-container">
+                            <label for="imageUpload" class="file-upload-label">Choose File</label>
+                            <input type="file" accept=".jpg,.jpeg" id="imageUpload" name="imageUpload" class="file-upload-input">
+                            <span id="fileNameDisplay"></span>
+                        </div>
+                    </div>
+                    <div id="webcamUpload" style="display: none;">
+                        <p>Take a photo using your webcam:</p>
+                        <button type="button" id="openCameraButton" class="cta-button">Open Camera</button>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" id="analyzeButton" class="cta-button" disabled>Analyze Image</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 3: Camera -->
+            <div id="step-camera" class="step card" style="display: none;">
+                <h3 class="step-title">Take a Photo</h3>
+                <div class="camera-container">
+                    <video id="webcamVideo" autoplay playsinline></video>
+                    <canvas id="photoCanvas" style="display: none;"></canvas>
+                    <div class="camera-controls">
+                        <button id="captureButton" class="cta-button">Capture</button>
+                        <button id="retakeButton" class="cta-button" style="display: none;">Retake</button>
+                        <button id="usePhotoButton" class="cta-button" style="display: none;">Use Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Loading -->
+            <div id="step-loading" class="step card" style="display: none;">
+                <h3 class="step-title">Analyzing</h3>
+                <p>Please wait while we analyze your image...</p>
+                <div class="loader"></div>
+            </div>
+
+            <!-- Step 5: Results -->
+            <div id="step-results" class="step card" style="display: none;">
+                <h3 class="step-title">Analysis Results</h3>
+                <div id="result"></div>
+                <div class="button-container">
+                    <button id="newAnalysisButton" class="cta-button">Start New Analysis</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Spot™. All rights reserved.</p>
+        <p>Disclaimer: This tool is for informational purposes only and should not be considered medical advice. Always consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/connect.js') }}"></script>
+</body>
+</html>

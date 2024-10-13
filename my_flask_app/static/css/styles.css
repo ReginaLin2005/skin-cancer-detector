@@ -68,8 +68,7 @@ nav ul li a:hover {
 /* Main content */
 main {
     max-width: 1250px;
-    margin: 0 auto;
-
+    margin: 0 0 50px 0;
 }
 
 @keyframes animatedBackground {
@@ -91,7 +90,7 @@ main {
     top: -10px;
     right: -10px;
     z-index: -1;
-    background-image: url(Assets/derma.svg), url(Assets/brown-dot.svg), url(Assets/pink-dot.svg), url(Assets/red-dot.svg);
+    background-image: url(../asset/derma.svg), url(../asset/brown-dot.svg), url(../asset/pink-dot.svg), url(../asset/red-dot.svg);
     background-position: top 150px right 150px, top 800px right 50px, top -50px right -50px, top 600px right -20px;
     background-repeat: no-repeat;
     background-size: 600px, 400px, 300px, 200px;
@@ -133,6 +132,7 @@ p {
 .cta-button {
     display: inline-block;
     background: linear-gradient(90deg, var(--c1, #E9AFA3), var(--c2, #685044) 51%, var(--c1, #E9AFA3)) var(--x, 0)/ 200%;
+    font-family: "Lexend", sans-serif;
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -141,6 +141,7 @@ p {
     font-size: 1.2rem;
     transition: all 0.3s ease;
     text-align: center;
+    border: none;
 }
 
 .cta-button:hover {
@@ -189,7 +190,7 @@ p {
 
 .button {
     display: inline-block;
-    background-color: #3498db;
+    background-color: #9D4142;
     color: #fff;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
@@ -202,17 +203,8 @@ p {
 }
 
 .button:hover {
-    background-color: #2980b9;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.button.secondary {
-    background-color: #2ecc71;
-}
-
-.button.secondary:hover {
-    background-color: #27ae60;
 }
 
 .hero {
@@ -372,4 +364,79 @@ footer p {
     .social-icons {
         flex-direction: column;
     }
+}
+.input-mode-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.spacer {
+    width: 30px;
+}
+
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+#downloadPdfButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
 }

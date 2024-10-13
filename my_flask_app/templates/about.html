@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - SkinScan</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About - Spot™</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +14,12 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html"><img src="Assets/logo.svg" alt="logo"></a>
+                <a href="/"><img src="{{ url_for('static', filename='asset/logo.svg') }}" alt="logo"></a>
             </div>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="prediction.html">Prediction</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="prediction">Prediction</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -29,8 +29,8 @@
             <h1>About Our Service</h1>
             <div class="grid">
                 <div>
-                    <p>SkinScan uses advanced AI algorithms to analyze images of skin lesions and help identify potential signs of skin cancer. Our tool is designed to assist in early detection and encourage timely consultations with dermatologists.</p>
-                    <p>While not a substitute for professional medical advice, SkinScan can be a valuable first step in assessing your skin health. We're committed to improving skin cancer awareness and promoting regular skin checks.</p>
+                    <p>Spot™ uses advanced AI algorithms to analyze images of skin lesions and help identify potential signs of skin cancer. Our tool is designed to assist in early detection and encourage timely consultations with dermatologists.</p>
+                    <p>While not a substitute for professional medical advice, Spot™ can be a valuable first step in assessing your skin health. We're committed to improving skin cancer awareness and promoting regular skin checks.</p>
                 </div>
                 <img src="about-image.jpg" alt="Dermatologist examining a patient" style="width: 100%; height: auto; border-radius: 10px;">
             </div>
