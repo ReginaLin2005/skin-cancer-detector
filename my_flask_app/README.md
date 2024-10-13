@@ -46,4 +46,6 @@ We welcome contributions to improve the accuracy of our model and enhance the us
 
 - Intel for providing AI-optimized hardware
 - TensorFlow team for their powerful machine learning framework
-- [Any other acknowledgements or credits]
+- [dataset](https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign/data)
+- [dataset](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
+- [additional info](https://jddonline.com/project-atlas/)
