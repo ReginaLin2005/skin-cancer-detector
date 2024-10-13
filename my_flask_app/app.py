@@ -19,6 +19,10 @@ def contact():
 def predict():
         return render_template('prediction.html')
 
+@app.route('/analysis')
+def analyze():
+      return render_template('analysis.html')
+
 @app.route('/submit', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:

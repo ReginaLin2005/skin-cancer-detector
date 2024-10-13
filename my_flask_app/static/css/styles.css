@@ -68,8 +68,7 @@ nav ul li a:hover {
 /* Main content */
 main {
     max-width: 1250px;
-    margin: 0 auto;
-
+    margin: 0 0 50px 0;
 }
 
 @keyframes animatedBackground {
@@ -133,6 +132,7 @@ p {
 .cta-button {
     display: inline-block;
     background: linear-gradient(90deg, var(--c1, #E9AFA3), var(--c2, #685044) 51%, var(--c1, #E9AFA3)) var(--x, 0)/ 200%;
+    font-family: "Lexend", sans-serif;
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -141,6 +141,7 @@ p {
     font-size: 1.2rem;
     transition: all 0.3s ease;
     text-align: center;
+    border: none;
 }
 
 .cta-button:hover {
@@ -189,7 +190,7 @@ p {
 
 .button {
     display: inline-block;
-    background-color: #3498db;
+    background-color: #9D4142;
     color: #fff;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
@@ -202,17 +203,8 @@ p {
 }
 
 .button:hover {
-    background-color: #2980b9;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.button.secondary {
-    background-color: #2ecc71;
-}
-
-.button.secondary:hover {
-    background-color: #27ae60;
 }
 
 .hero {
