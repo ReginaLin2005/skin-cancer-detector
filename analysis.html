@@ -42,15 +42,17 @@
             <!-- Step 2: Upload -->
             <div id="step-upload" class="step card" style="display: none;">
                 <h3 class="step-title">Upload Your Photo</h3>
-                <p>Upload an image of your skin lesion for analysis:</p>
-                <div class="file-upload-container">
-                    <label for="imageUpload" class="file-upload-label">Choose File</label>
-                    <input type="file" accept="image/*" id="imageUpload" class="file-upload-input">
-                    <span id="fileNameDisplay"></span>
-                </div>
-                <div class="button-container">
-                    <button id="analyzeButton" class="cta-button" disabled>Analyze Image</button>
-                </div>
+                <p>Upload a JPG image of your skin lesion for analysis:</p>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-upload-container">
+                        <label for="imageUpload" class="file-upload-label">Choose File</label>
+                        <input type="file" accept=".jpg,.jpeg" id="imageUpload" name="imageUpload" class="file-upload-input">
+                        <span id="fileNameDisplay"></span>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" id="analyzeButton" class="cta-button" disabled>Analyze Image</button>
+                    </div>
+                </form>
             </div>
 
             <!-- Step 3: Loading -->
@@ -76,40 +78,6 @@
         <p>Disclaimer: This tool is for informational purposes only and should not be considered medical advice. Always consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
     </footer>
 
-    <script>
-        const imageUpload = document.getElementById('imageUpload');
-        const analyzeButton = document.getElementById('analyzeButton');
-        const fileNameDisplay = document.getElementById('fileNameDisplay');
-
-        imageUpload.addEventListener('change', (event) => {
-            if (event.target.files.length > 0) {
-                analyzeButton.disabled = false;
-                fileNameDisplay.textContent = 'File: ' + event.target.files[0].name;
-            } else {
-                analyzeButton.disabled = true;
-                fileNameDisplay.textContent = '';
-            }
-        });
-
-        document.getElementById('nextButton').addEventListener('click', () => {
-            document.getElementById('step-instructions').style.display = 'none';
-            document.getElementById('step-upload').style.display = 'block';
-        });
-
-        analyzeButton.addEventListener('click', () => {
-            document.getElementById('step-upload').style.display = 'none';
-            document.getElementById('step-loading').style.display = 'block';
-            // Simulate analysis (replace with actual analysis logic)
-            setTimeout(() => {
-                document.getElementById('step-loading').style.display = 'none';
-                document.getElementById('step-results').style.display = 'block';
-                document.getElementById('result').innerHTML = 'Analysis complete. Here are your results...';
-            }, 3000);
-        });
-
-        document.getElementById('newAnalysisButton').addEventListener('click', () => {
-            window.location.reload();
-        });
-    </script>
+    <script src="connect.js"></script>
 </body>
 </html>
