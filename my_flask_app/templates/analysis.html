@@ -46,12 +46,32 @@
             <!-- Step 2: Upload -->
             <div id="step-upload" class="step card" style="display: none;">
                 <h3 class="step-title">Upload Your Photo</h3>
-                <p>Upload a JPG image of your skin lesion for analysis:</p>
+                <p>Choose how you want to provide your skin lesion image:</p>
+                <div class="input-mode-selector">
+                    <label class="radio-container">
+                        <input type="radio" name="inputMode" id="fileInputRadio" checked>
+                        <span class="checkmark"></span>
+                        File Input
+                    </label>
+                    <span class="spacer"></span>
+                    <label class="radio-container">
+                        <input type="radio" name="inputMode" id="imageInputRadio">
+                        <span class="checkmark"></span>
+                        Webcam Capture
+                    </label>
+                </div>
                 <form id="uploadForm" enctype="multipart/form-data">
-                    <div class="file-upload-container">
-                        <label for="imageUpload" class="file-upload-label">Choose File</label>
-                        <input type="file" accept=".jpg,.jpeg" id="imageUpload" name="imageUpload" class="file-upload-input">
-                        <span id="fileNameDisplay"></span>
+                    <div id="manualUpload">
+                        <p>Upload a JPG image of your skin lesion for analysis:</p>
+                        <div class="file-upload-container">
+                            <label for="imageUpload" class="file-upload-label">Choose File</label>
+                            <input type="file" accept=".jpg,.jpeg" id="imageUpload" name="imageUpload" class="file-upload-input">
+                            <span id="fileNameDisplay"></span>
+                        </div>
+                    </div>
+                    <div id="webcamUpload" style="display: none;">
+                        <p>Take a photo using your webcam:</p>
+                        <button type="button" id="openCameraButton" class="cta-button">Open Camera</button>
                     </div>
                     <div class="button-container">
                         <button type="submit" id="analyzeButton" class="cta-button" disabled>Analyze Image</button>
@@ -59,14 +79,28 @@
                 </form>
             </div>
 
-            <!-- Step 3: Loading -->
+            <!-- Step 3: Camera -->
+            <div id="step-camera" class="step card" style="display: none;">
+                <h3 class="step-title">Take a Photo</h3>
+                <div class="camera-container">
+                    <video id="webcamVideo" autoplay playsinline></video>
+                    <canvas id="photoCanvas" style="display: none;"></canvas>
+                    <div class="camera-controls">
+                        <button id="captureButton" class="cta-button">Capture</button>
+                        <button id="retakeButton" class="cta-button" style="display: none;">Retake</button>
+                        <button id="usePhotoButton" class="cta-button" style="display: none;">Use Photo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Loading -->
             <div id="step-loading" class="step card" style="display: none;">
                 <h3 class="step-title">Analyzing</h3>
                 <p>Please wait while we analyze your image...</p>
                 <div class="loader"></div>
             </div>
 
-            <!-- Step 4: Results -->
+            <!-- Step 5: Results -->
             <div id="step-results" class="step card" style="display: none;">
                 <h3 class="step-title">Analysis Results</h3>
                 <div id="result"></div>
