@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Load the model
 model = tf.keras.models.load_model('skin-cancer-detector\my_flask_app\cancer_detection_model.h5')
 
-# Define class names (adjust these based on your model's classes)
+# Define class names
 class_names = ['benign', 'malignant']
 
 def preprocess_image(image_path):
