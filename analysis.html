@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Analysis - SkinScan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="analysis-page">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="Assets/logo.svg" alt="logo"></a>
+            </div>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="prediction.html">Prediction</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="analysis" class="container text-center">
+            <h1 class="page-title">Skin Analysis Process</h1>
+            
+            <!-- Step 1: Instructions -->
+            <div id="step-instructions" class="step card">
+                <h3 class="step-title">How to Take a Good Photo</h3>
+                <ul class="instruction-list">
+                    <li>Use good lighting (natural light is best)</li>
+                    <li>Keep the camera steady and in focus</li>
+                    <li>Include a ruler or coin for size reference</li>
+                    <li>Take multiple angles if possible</li>
+                </ul>
+                <img src="sample-photo.jpg" alt="Sample skin lesion photo" class="sample-photo">
+                <div class="button-container">
+                    <button id="nextButton" class="cta-button">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Upload -->
+            <div id="step-upload" class="step card" style="display: none;">
+                <h3 class="step-title">Upload Your Photo</h3>
+                <p>Upload an image of your skin lesion for analysis:</p>
+                <div class="file-upload-container">
+                    <label for="imageUpload" class="file-upload-label">Choose File</label>
+                    <input type="file" accept="image/*" id="imageUpload" class="file-upload-input">
+                    <span id="fileNameDisplay"></span>
+                </div>
+                <div class="button-container">
+                    <button id="analyzeButton" class="cta-button" disabled>Analyze Image</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Loading -->
+            <div id="step-loading" class="step card" style="display: none;">
+                <h3 class="step-title">Analyzing</h3>
+                <p>Please wait while we analyze your image...</p>
+                <div class="loader"></div>
+            </div>
+
+            <!-- Step 4: Results -->
+            <div id="step-results" class="step card" style="display: none;">
+                <h3 class="step-title">Analysis Results</h3>
+                <div id="result"></div>
+                <div class="button-container">
+                    <button id="newAnalysisButton" class="cta-button">Start New Analysis</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 SkinScan. All rights reserved.</p>
+        <p>Disclaimer: This tool is for informational purposes only and should not be considered medical advice. Always consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
+    </footer>
+
+    <script>
+        const imageUpload = document.getElementById('imageUpload');
+        const analyzeButton = document.getElementById('analyzeButton');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+
+        imageUpload.addEventListener('change', (event) => {
+            if (event.target.files.length > 0) {
+                analyzeButton.disabled = false;
+                fileNameDisplay.textContent = 'File: ' + event.target.files[0].name;
+            } else {
+                analyzeButton.disabled = true;
+                fileNameDisplay.textContent = '';
+            }
+        });
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            document.getElementById('step-instructions').style.display = 'none';
+            document.getElementById('step-upload').style.display = 'block';
+        });
+
+        analyzeButton.addEventListener('click', () => {
+            document.getElementById('step-upload').style.display = 'none';
+            document.getElementById('step-loading').style.display = 'block';
+            // Simulate analysis (replace with actual analysis logic)
+            setTimeout(() => {
+                document.getElementById('step-loading').style.display = 'none';
+                document.getElementById('step-results').style.display = 'block';
+                document.getElementById('result').innerHTML = 'Analysis complete. Here are your results...';
+            }, 3000);
+        });
+
+        document.getElementById('newAnalysisButton').addEventListener('click', () => {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
