@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="prediction-page">
     <header>
         <nav>
             <div class="logo">SkinScan</div>
@@ -21,31 +21,18 @@
     </header>
 
     <main>
-        <section id="prediction" class="container">
-            <h1>Skin Cancer Prediction Tool</h1>
-            <div class="grid">
-                <div>
-                    <p>Upload an image of your skin lesion for analysis:</p>
-                    <input type="file" accept="image/*" id="imageUpload">
-                    <button id="analyzeButton" class="cta-button">Analyze Image</button>
-                    <div id="result"></div>
-                </div>
-                <div class="card">
-                    <h3>How to Take a Good Photo</h3>
-                    <ul>
-                        <li>Use good lighting (natural light is best)</li>
-                        <li>Keep the camera steady and in focus</li>
-                        <li>Include a ruler or coin for size reference</li>
-                        <li>Take multiple angles if possible</li>
-                    </ul>
-                    <img src="sample-photo.jpg" alt="Sample skin lesion photo" style="width: 100%; height: auto; border-radius: 5px;">
-                </div>
+        <section id="prediction" class="container text-center">
+            <h1 class="page-title">Skin Cancer Prediction Tool</h1>
+            
+            <div id="start-analysis" class="centered-content">
+                <p class="intro-text">Welcome to the SkinScan prediction tool. Click the button below to begin the process.</p>
+                <a href="analysis.html" class="cta-button pulse">Start Analysis</a>
             </div>
         </section>
 
-        <section id="disclaimer" class="container">
-            <h2>Important Disclaimer</h2>
-            <p>SkinScan is designed to be a preliminary assessment tool and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+        <section id="disclaimer" class="container text-center">
+            <h2 class="section-title">Important Disclaimer</h2>
+            <p class="disclaimer-text">SkinScan is designed to be a preliminary assessment tool and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
             <a href="about.html" class="button secondary">Learn More About Our Service</a>
         </section>
     </main>
