@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot™ - AI-Powered Skin Cancer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="circles">
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='asset/logo.svg') }}" alt="logo"></a>
+            </div>
+            <ul>
+                <li><a href="about">About</a></li>
+                <li><a href="prediction">Prediction</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>AI-Powered Skin Cancer Prediction</h1>
+            <p>Early detection saves lives. </p>
+            <a href="prediction" class="cta-button">Get Started</a>
+        </section>
+
+        <section id="features" class="container section-spacing">
+            <h2>Why Choose Spot™?</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='asset/ai-icon.svg') }}" alt="AI Technology" class="icon">
+                    <h3>Advanced AI Technology</h3>
+                    <p>Our state-of-the-art AI algorithms analyze skin lesions with upto 80% accuracy, providing quick and reliable results.</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='asset/easy.svg') }}" alt="Easy to Use" class="icon">
+                    <h3>Easy to Use</h3>
+                    <p>Simply upload a photo of your skin lesion, and receive an instant analysis. No complicated procedures required.</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='asset/privacy.svg') }}" alt="Privacy Focused" class="icon">
+                    <h3>Privacy Focused</h3>
+                    <p>We prioritize your privacy and security. All uploaded images and personal information are handled with the utmost care.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="container section-spacing">
+            <h2>How It Works</h2>
+            <ol class="steps">
+                <li>Upload a clear, well-lit photo of your skin lesion</li>
+                <li>Our AI analyzes the image for potential signs of skin cancer</li>
+                <li>Receive an instant risk assessment</li>
+                <li>If necessary, consult with a dermatologist for further evaluation</li>
+            </ol>
+            <div class="button-container">
+                <a href="prediction" class="cta-button">Try It Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Spot™. All rights reserved.</p>
+        <p>Disclaimer: This tool is for informational purposes only and should not be considered medical advice. Always consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
+    </footer>
+</body>
+</html>
