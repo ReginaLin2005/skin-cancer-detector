@@ -18,7 +18,7 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.image import img_to_array, array_to_img
 from tensorflow.keras.models import load_model
 
-# Load the saved model
+# Load the saved model from the current directory
 loaded_model = load_model('cancer_detection_model.h5')
 
 def preprocess_image(image_path):
@@ -39,7 +39,7 @@ def predict_image(model, image_path):
 
     # Since you're doing binary classification, the output will be a probability
     # You can set a threshold (e.g., 0.5) to classify benign (0) or malignant (1)
-    if prediction[0] > 0.5:
-        return "Malignant"
+    if prediction[0][0] > 0.5:
+        return "M"
     else:
-        return "Benign"
+        return "B"

@@ -437,10 +437,13 @@ footer p {
     transform: rotate(45deg);
 }
 
+.download-button-container {
+    position: relative;
+    top: 20px;
+    right: 20px;
+}
+
 #downloadPdfButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     padding: 5px 10px;
     font-size: 14px;
 }

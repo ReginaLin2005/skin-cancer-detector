@@ -168,6 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4>Analysis Results:</h4>
                 <p><strong>Prediction:</strong> ${result.prediction}</p>
                 <p><strong>Confidence:</strong> ${result.confidence.toFixed(2)}%</p>
+            `;
+
+            // Insert the download button into its container
+            document.querySelector('.download-button-container').innerHTML = `
                 <button id="downloadPdfButton" class="cta-button">Download PDF Report</button>
             `;
 
