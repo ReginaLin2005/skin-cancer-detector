@@ -56,6 +56,9 @@ def upload_file():
             
             # Extract prediction
             pred_class = "Malignant" if prediction == "M" else "Benign"
+
+            print(prediction)
+            print(type(prediction))
             
             # Set confidence to 80% for both cases
             confidence = 76.9
