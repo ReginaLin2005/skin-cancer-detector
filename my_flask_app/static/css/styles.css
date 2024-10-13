@@ -54,21 +54,21 @@ nav ul li {
     margin-left: 3rem;
 }
 
-nav ul li a {
+a {
     color: #9D4142;
     font-size: 20px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
+a:hover {
     font-weight: bold;
 }
 
 /* Main content */
 main {
     max-width: 1250px;
-    margin: 0 0 50px 0;
+    margin: 0 auto 100px auto;
 }
 
 @keyframes animatedBackground {
@@ -310,6 +310,10 @@ footer p {
 }
 
 /* Contact page styles */
+#contact {
+    margin: auto;
+}
+
 .contact-info,
 .contact-form {
     background-color: #fff;
